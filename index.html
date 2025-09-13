@@ -1,8 +1,30 @@
-<!doctype html><html lang="de"><head>
-<meta charset="utf-8"><title>Weiterleitung…</title>
-<link rel="canonical" href="https://ki.fokusone.de/">
-<meta http-equiv="refresh" content="0; url=https://ki.fokusone.de/">
-<script>location.replace("https://ki.fokusone.de"+location.pathname+location.search+location.hash);</script>
-</head><body>
-Wenn Sie nicht automatisch weitergeleitet werden, <a href="https://ki.fokusone.de/">hier klicken</a>.
-</body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Weiterleitung …</title>
+
+  <!-- Ziel-URL (Repo-Pages) -->
+  <link rel="canonical" href="https://efeuerabend.github.io/fokusone-website/">
+
+  <!-- Fallback ohne JS -->
+  <meta http-equiv="refresh" content="0; url=https://efeuerabend.github.io/fokusone-website/">
+
+  <script>
+    (function () {
+      // Basis: Repo-Pages
+      var base = "https://efeuerabend.github.io/fokusone-website";
+      // Pfad sauber anhängen (führende Slashes entfernen)
+      var path = location.pathname.replace(/^\/+/, "");
+      // Finales Ziel inkl. Query + Hash
+      var target = base + "/" + path + location.search + location.hash;
+      location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  Wenn Sie nicht automatisch weitergeleitet werden,
+  <a href="https://efeuerabend.github.io/fokusone-website/">hier klicken</a>.
+</body>
+</html>
+
