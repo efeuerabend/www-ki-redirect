@@ -2,24 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Weiterleitung …</title>
-
-  <!-- Ziel-URL (Repo-Pages) -->
+  <title>Weiterleitung…</title>
   <link rel="canonical" href="https://efeuerabend.github.io/fokusone-website/">
-
-  <!-- Fallback ohne JS -->
   <meta http-equiv="refresh" content="0; url=https://efeuerabend.github.io/fokusone-website/">
-
   <script>
-    (function () {
-      // Basis: Repo-Pages
-      var base = "https://efeuerabend.github.io/fokusone-website";
-      // Pfad sauber anhängen (führende Slashes entfernen)
-      var path = location.pathname.replace(/^\/+/, "");
-      // Finales Ziel inkl. Query + Hash
-      var target = base + "/" + path + location.search + location.hash;
-      location.replace(target);
-    })();
+    // Immer direkt zur Ziel-Startseite (ohne Pfad-Anhängsel) weiterleiten
+    window.location.replace("https://efeuerabend.github.io/fokusone-website/");
   </script>
 </head>
 <body>
@@ -27,4 +15,5 @@
   <a href="https://efeuerabend.github.io/fokusone-website/">hier klicken</a>.
 </body>
 </html>
+
 
