@@ -1,13 +1,38 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Weiterleitung…</title>
+  <meta charset="utf-8" />
+  <title>Weiterleitung …</title>
+
+  <!-- SEO-Kanonal auf das Ziel -->
   <link rel="canonical" href="https://efeuerabend.github.io/fokusone-website/">
+
+  <!-- Fallback ohne JS: leitet zumindest auf die Ziel-Startseite -->
   <meta http-equiv="refresh" content="0; url=https://efeuerabend.github.io/fokusone-website/">
+
   <script>
-    // Immer direkt zur Ziel-Startseite (ohne Pfad-Anhängsel) weiterleiten
-    window.location.replace("https://efeuerabend.github.io/fokusone-website/");
+  (function () {
+    // Ziel-Basis
+    var BASE = "https://efeuerabend.github.io/fokusone-website";
+    // Name DIESES Repos (wird aus dem Pfad entfernt)
+    var SOURCE_REPO = "www-ki-redirect";
+
+    // Pfad ohne führende Slashes
+    var path = location.pathname.replace(/^\/+/, "");
+
+    // "/www-ki-redirect" bzw. "/www-ki-redirect/..." entfernen
+    if (path === SOURCE_REPO) {
+      path = "";
+    } else if (path.indexOf(SOURCE_REPO + "/") === 0) {
+      path = path.substring(SOURCE_REPO.length + 1);
+    }
+
+    // Ziel inkl. evtl. Rest-Pfad, Query & Hash
+    var target = BASE + (path ? "/" + path : "") + location.search + location.hash;
+
+    // Hard-Redirect (ohne Back-Button-Schleifen)
+    location.replace(target);
+  })();
   </script>
 </head>
 <body>
@@ -15,5 +40,6 @@
   <a href="https://efeuerabend.github.io/fokusone-website/">hier klicken</a>.
 </body>
 </html>
+
 
 
